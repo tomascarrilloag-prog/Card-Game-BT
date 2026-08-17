@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://blmbxt1pts4eg"]
+
+[ext_resource type="Script" uid="uid://hv0nnq71r5kl" path="res://hand_container.gd" id="1_0or06"]
+[ext_resource type="PackedScene" uid="uid://dytya4iblqrtt" path="res://card.tscn" id="2_afc6g"]
+[ext_resource type="Texture2D" uid="uid://m6p8titd0op6" path="res://Sprites/Pixel Fantasy Playing Cards/Playing Cards/card-spades-11.png" id="3_iupgd"]
+[ext_resource type="Texture2D" uid="uid://dxd3fq6s57mbi" path="res://Sprites/Pixel Fantasy Playing Cards/Playing Cards/card-spades-12.png" id="4_lhnnm"]
+[ext_resource type="Texture2D" uid="uid://mvrhvowqw55m" path="res://Sprites/Pixel Fantasy Playing Cards/Playing Cards/card-spades-13.png" id="5_hgi0t"]
+[ext_resource type="Texture2D" uid="uid://c1imht7mr7pxh" path="res://Sprites/Pixel Fantasy Playing Cards/Playing Cards/card-hearts-13.png" id="6_iupgd"]
+[ext_resource type="Texture2D" uid="uid://6jswvna3w5lq" path="res://Sprites/Pixel Fantasy Playing Cards/Playing Cards/card-hearts-11.png" id="7_lhnnm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5e3jd"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_1xgag"]
+sky_material = SubResource("ProceduralSkyMaterial_5e3jd")
+
+[sub_resource type="Environment" id="Environment_awcrs"]
+background_mode = 2
+sky = SubResource("Sky_1xgag")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_34kg7"]
+
+[node name="Escena principal" type="Node3D" unique_id=439135392]
+
+[node name="Fondo" type="Node3D" parent="." unique_id=1852635136]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Fondo" unique_id=1962354751]
+environment = SubResource("Environment_awcrs")
+
+[node name="Camera3D" type="Camera3D" parent="Fondo" unique_id=166847408]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Fondo" unique_id=1064705542]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Fondo" unique_id=144965500]
+transform = Transform3D(6.847726, 0, 0, 0, 2.8709576, 0, 0, 0, 1, 0, 0, -4.5256634)
+mesh = SubResource("BoxMesh_34kg7")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=195927063]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Node2D" unique_id=970361475]
+
+[node name="HandContainer" type="Control" parent="Node2D/CanvasLayer" unique_id=1583280318]
+layout_mode = 3
+anchor_left = 0.503
+anchor_top = 0.9710001
+anchor_right = 0.503
+anchor_bottom = 0.9710001
+offset_left = -260.45605
+offset_top = -194.20807
+offset_right = 260.54395
+offset_bottom = 27.791931
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_0or06")
+
+[node name="Card" parent="Node2D/CanvasLayer/HandContainer" unique_id=1073156250 instance=ExtResource("2_afc6g")]
+layout_mode = 1
+offset_left = 50.5
+offset_top = 20.0
+offset_right = -370.5
+offset_bottom = -62.0
+rotation = -0.2617994
+pivot_offset = Vector2(50, 182)
+card_texture = ExtResource("4_lhnnm")
+
+[node name="Card2" parent="Node2D/CanvasLayer/HandContainer" unique_id=850844810 instance=ExtResource("2_afc6g")]
+layout_mode = 1
+offset_left = 130.5
+offset_top = 5.0
+offset_right = -290.5
+offset_bottom = -77.0
+rotation = -0.1308997
+pivot_offset = Vector2(50, 182)
+card_texture = ExtResource("5_hgi0t")
+
+[node name="Card3" parent="Node2D/CanvasLayer/HandContainer" unique_id=930927839 instance=ExtResource("2_afc6g")]
+layout_mode = 1
+offset_left = 210.5
+offset_right = -210.5
+offset_bottom = -82.0
+pivot_offset = Vector2(50, 182)
+card_texture = ExtResource("3_iupgd")
+
+[node name="Card4" parent="Node2D/CanvasLayer/HandContainer" unique_id=845473513 instance=ExtResource("2_afc6g")]
+layout_mode = 1
+offset_left = 290.5
+offset_top = 5.0
+offset_right = -130.5
+offset_bottom = -77.0
+rotation = 0.1308997
+pivot_offset = Vector2(50, 182)
+card_texture = ExtResource("6_iupgd")
+
+[node name="Card5" parent="Node2D/CanvasLayer/HandContainer" unique_id=846370135 instance=ExtResource("2_afc6g")]
+layout_mode = 1
+offset_left = 370.5
+offset_top = 20.0
+offset_right = -50.5
+offset_bottom = -62.0
+rotation = 0.2617994
+pivot_offset = Vector2(50, 182)
+card_texture = ExtResource("7_lhnnm")

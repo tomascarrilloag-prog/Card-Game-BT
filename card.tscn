@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dytya4iblqrtt"]
+
+[ext_resource type="Script" uid="uid://blcjt3nifmedr" path="res://cardhover.gd" id="1_rjlel"]
+[ext_resource type="Texture2D" uid="uid://dxd3fq6s57mbi" path="res://Sprites/Pixel Fantasy Playing Cards/Playing Cards/card-spades-12.png" id="2_q5obu"]
+
+[node name="Card" type="Control" unique_id=1073156250]
+custom_minimum_size = Vector2(100, 140)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1052.0
+offset_bottom = -508.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rjlel")
+
+[node name="Sprite" type="TextureRect" parent="." unique_id=381620119]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q5obu")
+expand_mode = 1
+stretch_mode = 6
